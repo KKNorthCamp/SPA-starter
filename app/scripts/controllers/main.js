@@ -2,17 +2,18 @@
 
 /**
  * @ngdoc function
- * @name inviteOperationManagmentSystemApp.controller:MainCtrl
+ * @name inviteOperationManagementSystemApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the inviteOperationManagmentSystemApp
+ * Controller of the inviteOperationManagementSystemApp
  */
-angular.module('inviteOperationManagmentSystemApp')
+angular.module('inviteOperationManagementSystemApp')
   .controller('MainCtrl', function () {
-    this.asdf = 'kavalon :3';
+
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+      
   });

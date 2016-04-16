@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name inviteOperationManagmentSystemApp.controller:AboutCtrl
+ * @name inviteOperationManagementSystemApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the inviteOperationManagmentSystemApp
+ * Controller of the inviteOperationManagementSystemApp
  */
-angular.module('inviteOperationManagmentSystemApp')
+angular.module('inviteOperationManagementSystemApp')
   .controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
