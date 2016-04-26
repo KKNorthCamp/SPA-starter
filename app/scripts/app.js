@@ -41,6 +41,6 @@ angular
     .run(function ($location, Auth) {
 
         // 页面加载时, 如果用户没有登录, 则跳转到登录页
-        Auth.checkLogin();
+        Auth.autoCheckLoginState();
         
     });

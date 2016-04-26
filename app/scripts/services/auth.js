@@ -16,7 +16,7 @@ angular.module('inviteOperationManagementSystemApp')
          * @returns Boolean
          */
         function isUserLogin() {
-            var ioms; // 本地缓存的用户登录相关状态等信息
+            var ioms; // 本地缓存的用户登录状态等相关信息
             var tokenExist; // 是否有登陆凭证
             var tokenNotExpired; // 登陆凭证是否过期
             var userLoginStatus; // 用来标记用户登陆状态
@@ -37,7 +37,7 @@ angular.module('inviteOperationManagementSystemApp')
         /**
          * 提供一个检查用户登录状态的方法, 如果没有登录则自动跳转到登录页
          */
-        function checkLogin() {
+        function autoCheckLoginState() {
 
             if (!isUserLogin()) {
                 $location.path('/login');
@@ -48,6 +48,6 @@ angular.module('inviteOperationManagementSystemApp')
         // Public API here
         return {
             isUserLogin: isUserLogin,
-            checkLogin: checkLogin
+            autoCheckLoginState: autoCheckLoginState
         };
     });
