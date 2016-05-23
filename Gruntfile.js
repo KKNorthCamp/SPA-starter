@@ -61,16 +61,19 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
+          '<%= yeoman.app %>/views/templates/{,*/}*.html', // for ngtemplates:app
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-        ]
+        ],
+        tasks: ['ngtemplates:app'] // for ngtemplates:app
       }
     },
 
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        // 自定义端口: $ grunt serve --port 9001
+        port: grunt.option('port') || 9000, 
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '0.0.0.0',
         livereload: 35729
@@ -369,6 +372,15 @@ module.exports = function (grunt) {
     },
 
     ngtemplates: {
+      // for ngtemplates:app
+      app: {
+        options: {
+          module: 'inviteOperationManagementSystemApp'
+        },
+        cwd: '<%= yeoman.app %>',
+        src: 'views/**/*.html',
+        dest: '<%= yeoman.app %>/scripts/templateCache.js'
+      },
       dist: {
         options: {
           module: 'inviteOperationManagementSystemApp',
@@ -468,8 +480,16 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'wiredep',
+
+        'useminPrepare', // for ngtemplates:app
+
       'concurrent:server',
       'postcss:server',
+
+        'ngtemplates', // for ngtemplates:app
+        'concat', // for ngtemplates:app
+        'ngAnnotate', // for ngtemplates:app
+
       'connect:livereload',
       'watch'
     ]);
