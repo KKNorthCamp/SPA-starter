@@ -8,13 +8,11 @@
  */
 angular.module('inviteOperationManagementSystemApp')
     .directive('iomsHeader', function ($templateCache) {
-        console.log($templateCache);
-        console.log($templateCache.get('views/templates/iomsheader.html'));
         return {
             restrict: 'E',
             replace: true,
-            template: $templateCache.get('views/templates/iomsheader.html'),
-            /*templateUrl: '/views/templates/iomsheader.html',*/
+            template: $templateCache.get('views/templates/ioms-header.html'),
+            /*templateUrl: '/views/templates/ioms-header.html',*/
             controller: 'IomsHeaderCtrl',
             controllerAs: 'iomsHeader'
             /*,
