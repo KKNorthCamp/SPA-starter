@@ -23,6 +23,21 @@ a:visited {
     text-decoration: none;
 }
 
+/* 后台系统独有的特殊样式 */
+html,
+body,
+body > [ng-view] {
+    height: 100%;
+}
+
+/* 低版本浏览器的升级提示样式 */
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
 /* 栅格系统 */
 .col-xs-12 {
     padding-right: pxToRem(15px);
