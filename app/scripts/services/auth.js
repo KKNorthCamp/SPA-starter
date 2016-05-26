@@ -16,12 +16,13 @@ angular.module('inviteOperationManagementSystemApp')
          * @returns Boolean
          */
         function isUserLogin() {
+
             var ioms; // 本地缓存的用户登录状态等相关信息
             var tokenExist; // 是否有登陆凭证
             var tokenNotExpired; // 登陆凭证是否过期
             var userLoginStatus; // 用来标记用户登陆状态
 
-            ioms = localStorage.getItem('ioms');
+            ioms = getCurrentLoginUserInfo();
             if (angular.isObject(ioms)) {
                 ioms = JSON.parse(ioms);
                 // 初始化用户当前登陆状态
@@ -45,9 +46,28 @@ angular.module('inviteOperationManagementSystemApp')
 
         }
 
+        /**
+         * 获取
+         * @returns {object} localStorage 中储存的用户登录信息
+         */
+        function getCurrentLoginUserInfo() {
+            var strUserInfo,
+                objUserInfo;
+
+            strUserInfo = localStorage.getItem('ioms');
+            try {
+                objUserInfo = JSON.parse(strUserInfo);
+            } catch (ex) {
+                console.error('转换 JSON 时出现问题 => ', ex);
+            }
+
+            return objUserInfo;
+        }
+
         // Public API here
         return {
             isUserLogin: isUserLogin,
-            autoCheckLoginState: autoCheckLoginState
+            autoCheckLoginState: autoCheckLoginState,
+            getCurrentLoginUserInfo: getCurrentLoginUserInfo
         };
     });
