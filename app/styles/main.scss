@@ -7,4 +7,5 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "global";
 
 /* 系统登录页 */
-@import "pages/_login";
+@import "pages/login";
+@import "pages/message-push";

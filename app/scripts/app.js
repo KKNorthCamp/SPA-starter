@@ -15,7 +15,8 @@ angular
         'ngResource',
         'ngRoute',
         'ngSanitize',
-        'ngTouch'
+        'ngTouch',
+        'ui.bootstrap'
     ])
     .config(function ($routeProvider) {
         $routeProvider
@@ -33,6 +34,11 @@ angular
                 templateUrl: 'views/login.html',
                 controller: 'LoginCtrl',
                 controllerAs: 'login'
+            })
+            .when('/message-push', {
+              templateUrl: 'views/message-push.html',
+              controller: 'MessagePushCtrl',
+              controllerAs: 'messagePush'
             })
             .otherwise({
                 redirectTo: '/'
