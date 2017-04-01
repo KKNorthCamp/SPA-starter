@@ -1,7 +1,5 @@
-# invite-operation-managment-system
-
-INVITE 运营管理系统
-
+# SPA-Starter
+用于快速构建
 ## 初始化
 
 ```
