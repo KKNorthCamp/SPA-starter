@@ -1,5 +1,7 @@
-# SPA-Starter
-用于快速构建
+# SPA-starter
+
+  用于快速搭建 SPA(Single Page Application) 自动化脚手架, 基于 Angular, SASS, 使用 Grunt 作为构建工具, Bower 管理前端依赖, 使用 Yeoman 提供的 generator-angular 统一项目结构, 规范开发测试流程.
+
 ## 初始化
 
 ```
