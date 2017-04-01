@@ -1,7 +1,6 @@
 # invite-operation-managment-system
 
-这个项目是使用 [yo angular generator](https://github.com/yeoman/generator-angular) 生成的.
-yeoman 版本 0.15.1.
+INVITE 运营管理系统
 
 ## 初始化
 
